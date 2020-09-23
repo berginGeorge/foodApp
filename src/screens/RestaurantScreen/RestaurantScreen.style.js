@@ -5,6 +5,11 @@ const RestaurantScreenStyle = StyleSheet.create({
     width: Dimensions.get('window').width,
     height: 200,
   },
+  screenParentView: {flex: 1},
+  restaurantFlatListView: {
+    padding: 16,
+    flex: 1,
+  },
 });
 
 export default RestaurantScreenStyle;

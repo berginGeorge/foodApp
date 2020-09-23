@@ -23,6 +23,10 @@ const PeopleAndTimeStyle = StyleSheet.create({
     color: ColorConstants.primaryColor,
     paddingTop: 7,
   },
+  ratingText: {
+    color: ColorConstants.primaryColor,
+    paddingTop: 10,
+  },
 });
 
 export default PeopleAndTimeStyle;

@@ -42,6 +42,7 @@ const RecipeScreen = ({navigation}) => {
         keyExtractor={(item) => item.id}
         renderItem={renderList}
         showsVerticalScrollIndicator={false}
+        testID="recipeListFlastList"
       />
     </View>
   );

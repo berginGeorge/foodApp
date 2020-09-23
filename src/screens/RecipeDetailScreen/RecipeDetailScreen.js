@@ -39,7 +39,7 @@ const RecipeDetailScreen = ({route: {params}}) => {
             </Text>
           </View>
         </View>
-        <PeopleAndTime people={2} time={45} />
+        <PeopleAndTime people={2} time="45 minutes" />
         <View style={RecipeDetailScreenStyle.recipeAndInstructionsView}>
           <View style={RecipeDetailScreenStyle.seeIngredientsView}>
             <Button
