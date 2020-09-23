@@ -12,7 +12,6 @@ const RecipeScreen = ({navigation}) => {
   };
 
   const renderList = ({item}) => {
-    console.log(item);
     return (
       <Card onPress={() => recipeOnPressHandler(item.title)}>
         <View style={RecipeScreenStyles.childrenCardView}>
@@ -42,6 +41,7 @@ const RecipeScreen = ({navigation}) => {
         data={recipeList}
         keyExtractor={(item) => item.id}
         renderItem={renderList}
+        showsVerticalScrollIndicator={false}
       />
     </View>
   );

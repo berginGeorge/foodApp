@@ -24,9 +24,13 @@ const RecipeDetailScreenStyle = StyleSheet.create({
   seeIngredientsView: {
     marginBottom: 10,
   },
-  RecipeAndInstructionsView: {
+  recipeAndInstructionsView: {
     padding: 16,
   },
+  reminderButtonView: {
+    padding: 16,
+  },
+  drawerChildView: {height: '95%'},
 });
 
 export default RecipeDetailScreenStyle;

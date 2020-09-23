@@ -3,7 +3,6 @@ import ColorConstants from '../../util/constants/colorConstants';
 
 const CardStyles = StyleSheet.create({
   container: {
-    marginHorizontal: 20,
     display: 'flex',
     flexDirection: 'row',
     backgroundColor: ColorConstants.white,

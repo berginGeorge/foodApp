@@ -5,16 +5,16 @@ import breakfastList from '../../dummyData/breakfastList';
 import Card from '../../components/Card/Card';
 
 const RecipeListingScreen = ({navigation}) => {
-  const breakfastItemOnPressHandler = (id) => {
+  const breakfastItemOnPressHandler = (title) => {
     navigation.navigate('RecipeDetail', {
-      index: id,
+      title,
     });
   };
 
   const renderList = ({item}) => {
     console.log(item);
     return (
-      <Card onPress={() => breakfastItemOnPressHandler(item.id)}>
+      <Card onPress={() => breakfastItemOnPressHandler(item.title)}>
         <View style={RecipeListingScreenStyle.childrenCardView}>
           <View style={RecipeListingScreenStyle.listingMainTitleContainer}>
             <Text style={RecipeListingScreenStyle.breakfastListingMainTitle}>
@@ -49,6 +49,7 @@ const RecipeListingScreen = ({navigation}) => {
         data={breakfastList}
         keyExtractor={(item) => item.id}
         renderItem={renderList}
+        showsVerticalScrollIndicator={false}
       />
     </View>
   );

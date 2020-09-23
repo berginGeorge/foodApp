@@ -3,14 +3,14 @@ import {StyleSheet, Dimensions} from 'react-native';
 
 const RecipeScreenStyles = StyleSheet.create({
   mainContainerView: {
-    paddingVertical: 10,
+    padding: 16,
   },
   childrenCardView: {
     height: 250,
     position: 'relative',
   },
   stretch: {
-    width: Dimensions.get('window').width - 40,
+    width: Dimensions.get('window').width - 32,
     height: '100%',
     borderRadius: 5,
   },
