@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import {View, Text, Image, ScrollView} from 'react-native';
-import {timing} from 'react-native-reanimated';
 import restaurantDetail from '../../dummyData/restaurantDetail';
 
 import Counter from '../Counter/Counter';
