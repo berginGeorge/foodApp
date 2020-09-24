@@ -1,7 +1,11 @@
-import React from 'react';
-import {View, Text, Image} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {View, Text, Image, ScrollView} from 'react-native';
+import {timing} from 'react-native-reanimated';
+import restaurantDetail from '../../dummyData/restaurantDetail';
+
 import Counter from '../Counter/Counter';
 import DropDown from '../DropDown/DropDown';
+import TimeTile from '../TimeTile/TimeTile';
 import MakeReservationStyle from './MakeReservation.style';
 
 const MakeReservation = () => {
@@ -14,6 +18,24 @@ const MakeReservation = () => {
     restaurantImagePreview,
     bookingView,
   } = MakeReservationStyle;
+
+  const [reservationTimings, setReservationTimings] = useState(
+    restaurantDetail.reservationTiming,
+  );
+
+  const timeSelectHandler = (index) => {
+    const tempTiming = reservationTimings.map((timingObj) => ({
+      ...timingObj,
+      selected: false,
+    }));
+    tempTiming[index].selected = !tempTiming[index].selected;
+    setReservationTimings(tempTiming);
+  };
+
+  useEffect(() => {
+    console.log('reservationTimings', reservationTimings);
+  }, [reservationTimings]);
+
   return (
     <>
       <View style={restaurantTileWrapper}>
@@ -35,6 +57,18 @@ const MakeReservation = () => {
       <View style={bookingView}>
         <DropDown />
         <Counter initialValue={0} maxValue={4} valueText="People" />
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          {reservationTimings.map(({timing, selected}, index) => (
+            <TimeTile
+              key={timing}
+              timing={timing}
+              selected={selected}
+              onSelect={() => {
+                timeSelectHandler(index);
+              }}
+            />
+          ))}
+        </ScrollView>
       </View>
     </>
   );
