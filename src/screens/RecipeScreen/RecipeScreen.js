@@ -5,6 +5,15 @@ import Card from '../../components/Card/Card';
 import RecipeScreenStyles from './RecipeScreen.style';
 
 const RecipeScreen = ({navigation}) => {
+  const {
+    childrenCardView,
+    recipeMainTitleContainer,
+    recipeMainSubTitle,
+    recipeMainTitle,
+    stretch,
+    mainContainerView,
+  } = RecipeScreenStyles;
+
   const recipeOnPressHandler = (title) => {
     navigation.navigate('RecipeList', {
       title,
@@ -14,15 +23,13 @@ const RecipeScreen = ({navigation}) => {
   const renderList = ({item}) => {
     return (
       <Card onPress={() => recipeOnPressHandler(item.title)}>
-        <View style={RecipeScreenStyles.childrenCardView}>
-          <View style={RecipeScreenStyles.recipeMainTitleContainer}>
-            <Text style={RecipeScreenStyles.recipeMainSubTitle}>
-              {item.message.toUpperCase()}
-            </Text>
-            <Text style={RecipeScreenStyles.recipeMainTitle}>{item.title}</Text>
+        <View style={childrenCardView}>
+          <View style={recipeMainTitleContainer}>
+            <Text style={recipeMainSubTitle}>{item.message.toUpperCase()}</Text>
+            <Text style={recipeMainTitle}>{item.title}</Text>
           </View>
           <Image
-            style={RecipeScreenStyles.stretch}
+            style={stretch}
             resizeMode="cover"
             source={{
               uri: item.imageURL,
@@ -34,7 +41,7 @@ const RecipeScreen = ({navigation}) => {
   };
 
   return (
-    <View style={RecipeScreenStyles.mainContainerView}>
+    <View style={mainContainerView}>
       <FlatList
         keyboardShouldPersistTaps="always"
         bounces="false"
